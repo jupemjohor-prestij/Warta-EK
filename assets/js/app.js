@@ -291,7 +291,7 @@ var BilPenduduk = L.geoJson(null, {
     });
   }
 });
-$.getJSON("data/Polygon/Geojson/Johor_PopulationbyDUN.geojson", function (data) {
+$.getJSON("data/Polygon/GEOJSON/Johor_PopulationbyDUN.geojson", function (data) {
   BilPenduduk.addData(data);
 });
 
