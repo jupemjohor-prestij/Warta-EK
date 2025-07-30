@@ -197,7 +197,7 @@ var polis = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/point/polis.geojson", function (data) {
+$.getJSON("data/Point/polis.geojson", function (data) {
   polis.addData(data);
   map.addLayer(polisLayer);
 });
@@ -241,7 +241,7 @@ var hospital = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/point/OSM_hospital1.geojson", function (data) {
+$.getJSON("data/Point/OSM_hospital1.geojson", function (data) {
   hospital.addData(data);
 });
 
