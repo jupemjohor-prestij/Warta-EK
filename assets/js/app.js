@@ -197,7 +197,7 @@ var polis = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/polis.geojson", function (data) {
+$.getJSON("data/point/polis.geojson", function (data) {
   polis.addData(data);
   map.addLayer(polisLayer);
 });
@@ -241,41 +241,22 @@ var hospital = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/OSM_hospital1.geojson", function (data) {
+$.getJSON("data/point/OSM_hospital1.geojson", function (data) {
   hospital.addData(data);
 });
 
 // LAYER BANJIR
 
-var PolisColors = {"PW2998":"#ff3135", "PW2999":"#ff3135", "PW3000":"#ff3135", "PW3001":"#009b2e",
-    "PW3002":"#009b2e", "PW50228":"#009b2e", "PW50230":"#ce06cb", "PW50231":"#fd9a00", "N.48":"#fd9a00",
-    "N.55":"#fd9a00", "N.53":"#fd9a00","N.32":"#fd9a00", "N.27":"#ffff00", "N.31":"#ffff00",
-    "N.28":"#ffff00", "N.18":"#ffff00", "N.25":"#ffff00", "N.22":"#9ace00", "N.20":"#6e6e6e",
-    "N.06":"#6e6e6e", "N.13":"#976900", "N.02":"#976900", "N.15":"#969696", "N.08":"#ffff00",
-    "N.11":"#ffff00", "N.04":"#ffff00", "N.16":"#ff3135", "N.01":"#ff3135", "N.03":"#ff3135", "N.05":"#009b2e",
-    "N.07":"#009b2e", "N.10":"#009b2e", "N.12":"#ce06cb", "N.14":"#fd9a00", "N.17":"#fd9a00",
-    "N.19":"#fd9a00", "N.21":"#fd9a00","N.23":"#fd9a00", "N.24":"#ffff00", "N.26":"#ffff00",
-    "N.29":"#ffff00", "N.30":"#ffff00", "N.33":"#ffff00", "N.37":"#9ace00", "N.34":"#6e6e6e",
-    "N.38":"#6e6e6e", "N.40":"#976900", "N.43":"#976900", "N.44":"#969696", "N.46":"#ffff00",
-    "N.49":"#ffff00", "N.56":"#ffff00", "N.54":"#ff3135", "N.50":"#ff3135", "N.52":"#ff3135", "N.09":"#009b2e",};
+var PolisColors = {"PW2998":"#ff3135", "PW2999":"#eaff31ff", "PW3000":"#3431ffff", "PW3001":"#969696",
+    "PW3002":"#fd9a00", "PW50228":"#009b2e", "PW50230":"#ce06cb", "PW50231":"#fd9a00"};
 
-var subwayColors = {"N.51":"#ff3135", "N.39":"#ff3135", "N.36":"#ff3135", "N.42":"#009b2e",
-    "N.35":"#009b2e", "N.41":"#009b2e", "N.45":"#ce06cb", "N.47":"#fd9a00", "N.48":"#fd9a00",
-    "N.55":"#fd9a00", "N.53":"#fd9a00","N.32":"#fd9a00", "N.27":"#ffff00", "N.31":"#ffff00",
-    "N.28":"#ffff00", "N.18":"#ffff00", "N.25":"#ffff00", "N.22":"#9ace00", "N.20":"#6e6e6e",
-    "N.06":"#6e6e6e", "N.13":"#976900", "N.02":"#976900", "N.15":"#969696", "N.08":"#ffff00",
-    "N.11":"#ffff00", "N.04":"#ffff00", "N.16":"#ff3135", "N.01":"#ff3135", "N.03":"#ff3135", "N.05":"#009b2e",
-    "N.07":"#009b2e", "N.10":"#009b2e", "N.12":"#ce06cb", "N.14":"#fd9a00", "N.17":"#fd9a00",
-    "N.19":"#fd9a00", "N.21":"#fd9a00","N.23":"#fd9a00", "N.24":"#ffff00", "N.26":"#ffff00",
-    "N.29":"#ffff00", "N.30":"#ffff00", "N.33":"#ffff00", "N.37":"#9ace00", "N.34":"#6e6e6e",
-    "N.38":"#6e6e6e", "N.40":"#976900", "N.43":"#976900", "N.44":"#969696", "N.46":"#ffff00",
-    "N.49":"#ffff00", "N.56":"#ffff00", "N.54":"#ff3135", "N.50":"#ff3135", "N.52":"#ff3135", "N.09":"#009b2e",};
+var subwayColors = {"JOHOR":"#f8797cff"};
     
 
 var BilPenduduk = L.geoJson(null, {
   style: function (feature) {
       return {
-        color: subwayColors[feature.properties.KodDUN],
+        color: subwayColors[feature.properties.State],
         weight: 3,
         opacity: 1
       };
@@ -310,7 +291,7 @@ var BilPenduduk = L.geoJson(null, {
     });
   }
 });
-$.getJSON("data/Johor_PopulationbyDUN.geojson", function (data) {
+$.getJSON("data/Polygon/Geojson/Johor_PopulationbyDUN.geojson", function (data) {
   BilPenduduk.addData(data);
 });
 
@@ -353,13 +334,13 @@ var SempadanPolis = L.geoJson(null, {
     });
   }
 });
-$.getJSON("data/WARTA.geojson", function (data) {
+$.getJSON("data/Polygon/GEOJSON/POLIS_JBS_220725.geojson", function (data) {
   SempadanPolis.addData(data);
 });
     
 map = L.map("map", {
-  zoom: 6,
-  center: [4.05086231167319,108.18196517866467],
+  zoom: 10,
+  center: [1.662135592846289, 104.02336120605469],
   layers: [cartoLight, markerClusters, highlight],
   zoomControl: false,
   attributionControl: false
