@@ -170,13 +170,13 @@ var polis = L.geoJson(null, {
         iconAnchor: [12, 28],
         popupAnchor: [0, -25]
       }),
-      title: feature.properties.NAME,
+      title: feature.properties.Name,
       riseOnHover: true
     });
   },
   onEachFeature: function (feature, layer) {
     if (feature.properties) {
-      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>"  + "<tr><th>Go to location</th><td><a class='url-break' href='" + feature.properties.GoogleMap + "' target='_blank'>" + feature.properties.GoogleMap + "</a></td></tr>" + "<table>";
+      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.Name + "</td></tr>"  + "<tr><th>Go to location</th><td><a class='url-break' href='" + feature.properties.GoogleMap + "' target='_blank'>" + feature.properties.GoogleMap + "</a></td></tr>" + "<table>";
       layer.on({
         click: function (e) {
           $("#feature-title").html(feature.properties.NAME);
@@ -185,9 +185,9 @@ var polis = L.geoJson(null, {
           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
         }
       });
-      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/polis.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/polis.png"></td><td class="feature-name">' + layer.feature.properties.Name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       polisearch.push({
-        name: layer.feature.properties.NAME,
+        name: layer.feature.properties.Name,
         address: layer.feature.properties.ADDRESS1,
         source: "polis",
         id: L.stamp(layer),
@@ -197,7 +197,8 @@ var polis = L.geoJson(null, {
     }
   }
 });
-$.getJSON("data/Point/polis.geojson", function (data) {
+// $.getJSON("data/Point/polis.geojson", function (data) {
+$.getJSON("data/Data Balai Polis (KIK Jupem)/Balai Polis/GeoJson/Balai Polis JBS.geojson", function (data) {
   polis.addData(data);
   map.addLayer(polisLayer);
 });
@@ -247,10 +248,12 @@ $.getJSON("data/Point/OSM_hospital1.geojson", function (data) {
 
 // LAYER BANJIR
 
-var PolisColors = {"PW2998":"#ff3135", "PW2999":"#eaff31ff", "PW3000":"#3431ffff", "PW3001":"#969696",
-    "PW3002":"#fd9a00", "PW50228":"#009b2e", "PW50230":"#ce06cb", "PW50231":"#fd9a00"};
+var PolisColors = {"PW2998":"#ff3135", "PW2999":"#ff3135", "PW3000":"#ff3135", "PW3001":"#ff3135",
+    "PW3002":"#ff3135", "PW50228":"#ff3135", "PW50230":"#ff3135", "PW50231":"#ff3135"};
 
-var subwayColors = {"JOHOR":"#f8797cff"};
+var subwayColors = {"JOHOR":"#ccf879ff"};
+
+var PolisColorsJBS = {"1":"#79f895ff"};
     
 
 var BilPenduduk = L.geoJson(null, {
@@ -337,7 +340,54 @@ var SempadanPolis = L.geoJson(null, {
 $.getJSON("data/Polygon/GEOJSON/POLIS_JBS_220725.geojson", function (data) {
   SempadanPolis.addData(data);
 });
-    
+
+///// SEMPADAN POLIS JBS
+
+var SempadanPolisJBS = L.geoJson(null, {
+  style: function (feature) {
+      return {
+        color: PolisColorsJBS[feature.properties.Kod_Negeri],
+        weight: 3,
+        opacity: 1
+      };
+  },
+  onEachFeature: function (feature, layer) {
+    if (feature.properties) {
+      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Nama Balai Polis</th><td>" + feature.properties.Name  + "<table>";
+      layer.on({
+        click: function (e) {
+          $("#feature-title").html(feature.properties.Line);
+          $("#feature-info").html(content);
+          $("#featureModal").modal("show");
+
+        }
+      });
+    }
+    layer.on({
+      mouseover: function (e) {
+        var layer = e.target;
+        layer.setStyle({
+          weight: 3,
+          color: "#00FFFF",
+          opacity: 1
+        });
+        if (!L.Browser.ie && !L.Browser.opera) {
+          layer.bringToFront();
+        }
+      },
+      mouseout: function (e) {
+        SempadanPolisJBS.resetStyle(e.target);
+      }
+    });
+  }
+});
+$.getJSON("data/Data Balai Polis (KIK Jupem)/Sempadan Balai Polis/GeoJson/Sempadan Balai Polis JBS.geojson", function (data) {
+  SempadanPolisJBS.addData(data);
+});
+
+/////
+
+
 map = L.map("map", {
   zoom: 10,
   center: [1.662135592846289, 104.02336120605469],
@@ -455,8 +505,9 @@ var groupedOverlays = {
     
   },
   "Pelan Warta": {
-    "Bil. Penduduk": BilPenduduk,
-    "Sempadan Polis": SempadanPolis
+    "Sempadan Polis Johor Bahru": SempadanPolis,
+    "Sempadan Polis Johor Bahru Selatan": SempadanPolisJBS,
+    "Bil. Penduduk": BilPenduduk    
   }
 };
 

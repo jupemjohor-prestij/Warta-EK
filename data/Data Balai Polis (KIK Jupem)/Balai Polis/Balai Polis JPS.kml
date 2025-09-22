@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Balai Polis JPS.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Folder>
+		<name>Balai Polis JBS</name>
+		<Placemark>
+			<name>Balai Polis Larkin</name>
+			<description>Balai Polis Larkin
+JKR No.4506, Jalan Geruda,
+80350 Larkin, Johor Bahru,
+Johor.</description>
+			<LookAt>
+				<longitude>103.7471804358987</longitude>
+				<latitude>1.498278877697692</latitude>
+				<altitude>0</altitude>
+				<heading>-5.194740325834084e-13</heading>
+				<tilt>0</tilt>
+				<range>372.7655149497281</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7467036140036,1.497911556015698,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Sentral</name>
+			<description>Balai Polis Sentral
+489, Jalan Meldrum, 80000 Johor Bahru, Johor.</description>
+			<LookAt>
+				<longitude>103.7663558968087</longitude>
+				<latitude>1.458195986201026</latitude>
+				<altitude>0</altitude>
+				<heading>7.948849821980577e-06</heading>
+				<tilt>0</tilt>
+				<range>123.8769553320138</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7661471258899,1.458261052550911,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Setia Indah</name>
+			<description>Balai Polis Setia Indah
+Jalan Setia 3/9, Taman Setia Indah, 81200 Johor Bahru, Johor.</description>
+			<LookAt>
+				<longitude>103.7590812320193</longitude>
+				<latitude>1.575156352548586</latitude>
+				<altitude>0</altitude>
+				<heading>3.064877955059136e-06</heading>
+				<tilt>0</tilt>
+				<range>143.3848129491233</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.758754279084,1.574992937836998,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Pelangi Indah</name>
+			<description>Balai Polis Pelangi Indah
+Jalan Cantik 3, 81800, Johor Bahru, Johor</description>
+			<LookAt>
+				<longitude>103.800911439497</longitude>
+				<latitude>1.578692198285857</latitude>
+				<altitude>0</altitude>
+				<heading>2.715349683566599e-06</heading>
+				<tilt>0</tilt>
+				<range>85.70625403157503</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.8009086071536,1.578690216398237,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Taman Pelangi</name>
+			<description>Balai Polis Taman Pelangi
+80000 Johor Bahru, Johor.</description>
+			<LookAt>
+				<longitude>103.7737742493859</longitude>
+				<latitude>1.480472012095749</latitude>
+				<altitude>0</altitude>
+				<heading>8.750745560143326e-06</heading>
+				<tilt>0</tilt>
+				<range>90.25127988856336</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7736489882834,1.480538497595329,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Bangunan Sultan Iskandar</name>
+			<description>Balai Polis Bangunan Sultan Iskandar
+Jalan Bukit Chagar,
+80300 Johor Bahru, Johor.</description>
+			<LookAt>
+				<longitude>103.7666598833098</longitude>
+				<latitude>1.463851730828453</latitude>
+				<altitude>0</altitude>
+				<heading>0.0001660330992711364</heading>
+				<tilt>8.772992843981749</tilt>
+				<range>565.1552048926835</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7655703976857,1.464395072846977,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Majidee</name>
+			<description>Balai Polis Majidee
+JKR No.4335, Bt. 5 1/2,
+Jalan Tebrau, Majidee,
+81100 Johor Bahru,
+Johor.</description>
+			<LookAt>
+				<longitude>103.7591390999475</longitude>
+				<latitude>1.517426684295891</latitude>
+				<altitude>0</altitude>
+				<heading>5.719453997441066e-06</heading>
+				<tilt>0</tilt>
+				<range>129.2617708060862</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7589784876171,1.517348541356825,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Permas Jaya</name>
+			<description>Balai Polis Permas Jaya
+G-09 Blok A3 Jln Permas Utara,
+Bandar Baru Permas Jaya,
+81750 Masai, Johor.</description>
+			<LookAt>
+				<longitude>103.8168659960934</longitude>
+				<latitude>1.49708941433573</latitude>
+				<altitude>0</altitude>
+				<heading>1.361674973001568e-14</heading>
+				<tilt>0</tilt>
+				<range>147.7662247383134</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.8168005631046,1.497082092246546,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Bandar Dato&apos; Onn</name>
+			<description>Balai Polis Bandar Dato&apos; Onn
+Jalan Dato&apos; Onn 2, 81100 Johor Bahru</description>
+			<LookAt>
+				<longitude>103.7350824301794</longitude>
+				<latitude>1.560616756247173</latitude>
+				<altitude>0</altitude>
+				<heading>7.504121201577984e-15</heading>
+				<tilt>0</tilt>
+				<range>133.9111831530987</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7351700518809,1.560566768470351,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Lokap Ayer Molek</name>
+			<description>Balai Polis Lokap Ayer Molek
+Jalan Gertak Merah, 80000 Johor Bahru
+Balai tidak beroperasi</description>
+			<LookAt>
+				<longitude>103.7565906594165</longitude>
+				<latitude>1.464538529401667</latitude>
+				<altitude>0</altitude>
+				<heading>-6.92383256266317e-07</heading>
+				<tilt>0</tilt>
+				<range>139.2449037141242</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7566596803734,1.464500350280594,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Danga Bay</name>
+			<description>Balai Polis Danga Bay
+Polis Diraja Malaysia,
+Bt 4 1/2 Jalan Skudai,
+80200 Johor Bahru, Johor</description>
+			<LookAt>
+				<gx:ViewerOptions>
+					<gx:option enabled="0" name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>103.7180171541766</longitude>
+				<latitude>1.483280685534627</latitude>
+				<altitude>0</altitude>
+				<heading>13.5542839272308</heading>
+				<tilt>47.2545555094602</tilt>
+				<range>3.683281877260582</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7180089850701,1.483291800458236,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Balai Polis Trafik Johor Bahru Selatan</name>
+			<description>Balai Polis Trafik Johor Bahru Selatan
+Jalan Tebrau, 80000 Johor Bahru</description>
+			<LookAt>
+				<gx:ViewerOptions>
+					<gx:option enabled="0" name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>103.7625297459721</longitude>
+				<latitude>1.471954207533643</latitude>
+				<altitude>0</altitude>
+				<heading>101.6818519487147</heading>
+				<tilt>73.47259045426236</tilt>
+				<range>8.788129824486631</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>103.7625381105889,1.471962728894749,0</coordinates>
+			</Point>
+		</Placemark>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10201"></atom:link>
+	</Folder>
+</Document>
+</kml>
