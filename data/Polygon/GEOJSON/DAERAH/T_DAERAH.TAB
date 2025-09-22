@@ -1,0 +1,24 @@
+!table
+!version 650
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 12
+    KODNEGERI Char (2) ;
+    KODBAHAGIAN Char (2) ;
+    KODDAERAH Char (2) ;
+    KETERANGAN Char (50) ;
+    KOD_UNITLUAS Char (1) ;
+    KELUASAN Decimal (20, 3) ;
+    PERIMETER Decimal (20, 3) ;
+    TARIKH_KEMASKINI Date ;
+    GUID Char (32) ;
+    MI_PRINX Decimal (13, 0) ;
+    ISDELETED Char (1) ;
+    STATUS Char (1) ;
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "f6683a75-456f-43f7-82ba-815b89684c15"
+end_metadata

@@ -95,7 +95,7 @@ function syncSidebar() {
   polis.eachLayer(function (layer) {
     if (map.hasLayer(polisLayer)) {
       if (map.getBounds().contains(layer.getLatLng())) {
-        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/polis.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/polis.png"></td><td class="feature-name">' + layer.feature.properties.Name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
       }
     }
   });
@@ -246,16 +246,10 @@ $.getJSON("data/Point/OSM_hospital1.geojson", function (data) {
   hospital.addData(data);
 });
 
-// LAYER BANJIR
 
-var PolisColors = {"PW2998":"#ff3135", "PW2999":"#ff3135", "PW3000":"#ff3135", "PW3001":"#ff3135",
-    "PW3002":"#ff3135", "PW50228":"#ff3135", "PW50230":"#ff3135", "PW50231":"#ff3135"};
+///LAYER BIL PENDUDUK 
 
 var subwayColors = {"JOHOR":"#ccf879ff"};
-
-var PolisColorsJBS = {"1":"#79f895ff"};
-    
-
 var BilPenduduk = L.geoJson(null, {
   style: function (feature) {
       return {
@@ -298,11 +292,12 @@ $.getJSON("data/Polygon/GEOJSON/Johor_PopulationbyDUN.geojson", function (data) 
   BilPenduduk.addData(data);
 });
 
-
+/// SEMPADAN POLIS
+var PolisColors = {"1":"#ff3135"};
 var SempadanPolis = L.geoJson(null, {
   style: function (feature) {
       return {
-        color: PolisColors[feature.properties.NOPW],
+        color: PolisColors[feature.properties.KOD_NEGERI],
         weight: 3,
         opacity: 1
       };
@@ -343,6 +338,7 @@ $.getJSON("data/Polygon/GEOJSON/POLIS_JBS_220725.geojson", function (data) {
 
 ///// SEMPADAN POLIS JBS
 
+var PolisColorsJBS = {"1":"#79f895ff"};
 var SempadanPolisJBS = L.geoJson(null, {
   style: function (feature) {
       return {
@@ -385,7 +381,97 @@ $.getJSON("data/Data Balai Polis (KIK Jupem)/Sempadan Balai Polis/GeoJson/Sempad
   SempadanPolisJBS.addData(data);
 });
 
+///// SEMPADAN DAERAH
+
+var DAERAHCOLORS = {"01":"#9079f8ff"};
+var DAERAH = L.geoJson(null, {
+  style: function (feature) {
+      return {
+        color: DAERAHCOLORS[feature.properties.KODNEGERI],
+        weight: 3,
+        opacity: 1
+      };
+  },
+  onEachFeature: function (feature, layer) {
+    if (feature.properties) {
+      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Nama Daerah</th><td>" + feature.properties.KETERANGAN  + "<table>";
+      layer.on({
+        click: function (e) {
+          $("#feature-title").html(feature.properties.Line);
+          $("#feature-info").html(content);
+          $("#featureModal").modal("show");
+
+        }
+      });
+    }
+    layer.on({
+      mouseover: function (e) {
+        var layer = e.target;
+        layer.setStyle({
+          weight: 3,
+          color: "#00FFFF",
+          opacity: 1
+        });
+        if (!L.Browser.ie && !L.Browser.opera) {
+          layer.bringToFront();
+        }
+      },
+      mouseout: function (e) {
+        DAERAH.resetStyle(e.target);
+      }
+    });
+  }
+});
+$.getJSON("data/Polygon/GEOJSON/DAERAH/T_DAERAH.geojson", function (data) {
+  DAERAH.addData(data);
+});
+
 /////
+
+///// SEMPADAN MUKIM
+
+var MUKIMCOLORS = {"01":"#79f8d6ff"};
+var MUKIM = L.geoJson(null, {
+  style: function (feature) {
+      return {
+        color: MUKIMCOLORS[feature.properties.KODNEGERI],
+        weight: 3,
+        opacity: 1
+      };
+  },
+  onEachFeature: function (feature, layer) {
+    if (feature.properties) {
+      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Nama MUKIM</th><td>" + feature.properties.KETERANGAN  + "<table>";
+      layer.on({
+        click: function (e) {
+          $("#feature-title").html(feature.properties.Line);
+          $("#feature-info").html(content);
+          $("#featureModal").modal("show");
+
+        }
+      });
+    }
+    layer.on({
+      mouseover: function (e) {
+        var layer = e.target;
+        layer.setStyle({
+          weight: 3,
+          color: "#00FFFF",
+          opacity: 1
+        });
+        if (!L.Browser.ie && !L.Browser.opera) {
+          layer.bringToFront();
+        }
+      },
+      mouseout: function (e) {
+        MUKIM.resetStyle(e.target);
+      }
+    });
+  }
+});
+$.getJSON("data/Polygon/GEOJSON/MUKIM/T_MUKIM.geojson", function (data) {
+  MUKIM.addData(data);
+});
 
 
 map = L.map("map", {
@@ -507,7 +593,9 @@ var groupedOverlays = {
   "Pelan Warta": {
     "Sempadan Polis Johor Bahru": SempadanPolis,
     "Sempadan Polis Johor Bahru Selatan": SempadanPolisJBS,
-    "Bil. Penduduk": BilPenduduk    
+    "Bil. Penduduk": BilPenduduk,
+    "Sempadan Daerah":DAERAH,
+    "Sempadan Mukum": MUKIM    
   }
 };
 

@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "Balai Polis JBS_2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Balai Polis Larkin", "Latitude": 1.497911556, "Longitude": 103.746703614, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Larkin" }, "geometry": { "type": "Point", "coordinates": [ 103.746703614000069, 1.49791155600002, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Sentral", "Latitude": 1.458261053, "Longitude": 103.76614712600001, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Sentral" }, "geometry": { "type": "Point", "coordinates": [ 103.766147126000078, 1.458261053000058, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Setia Indah", "Latitude": 1.574992938, "Longitude": 103.758754279, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Setia Indah" }, "geometry": { "type": "Point", "coordinates": [ 103.758754279000073, 1.574992938000037, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Pelangi Indah", "Latitude": 1.578690216, "Longitude": 103.800908607, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Pelangi Indah" }, "geometry": { "type": "Point", "coordinates": [ 103.800908607000054, 1.578690216000041, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Taman Pelangi", "Latitude": 1.480538498, "Longitude": 103.77364898800001, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Taman Pelangi" }, "geometry": { "type": "Point", "coordinates": [ 103.773648988000048, 1.480538498000044, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Bangunan Sultan Iskandar", "Latitude": 1.464395073, "Longitude": 103.76557039799999, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Bangunan Sultan Iskandar" }, "geometry": { "type": "Point", "coordinates": [ 103.765570398000079, 1.464395073000048, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Majidee", "Latitude": 1.517348541, "Longitude": 103.758978488, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Majidee" }, "geometry": { "type": "Point", "coordinates": [ 103.758978488000082, 1.517348541000047, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Permas Jaya", "Latitude": 1.497082092, "Longitude": 103.816800563, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Permas Jaya" }, "geometry": { "type": "Point", "coordinates": [ 103.816800563000072, 1.497082092000028, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Bandar Dato' Onn", "Latitude": 1.560566768, "Longitude": 103.735170052, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Bandar Dato' Onn" }, "geometry": { "type": "Point", "coordinates": [ 103.735170052000058, 1.560566768000058, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Balai Polis Danga Bay", "Latitude": 1.4832918, "Longitude": 103.718008985, "GoogleMap": "https://www.google.com/maps/search/?api=1&query=Balai Polis Danga Bay" }, "geometry": { "type": "Point", "coordinates": [ 103.71800898500004, 1.483291800000075, 0.0 ] } }
+]
+}
