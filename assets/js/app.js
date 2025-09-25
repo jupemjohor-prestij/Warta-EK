@@ -594,8 +594,8 @@ var groupedOverlays = {
     "Sempadan Polis Johor Bahru": SempadanPolis,
     "Sempadan Polis Johor Bahru Selatan": SempadanPolisJBS,
     "Bil. Penduduk": BilPenduduk,
-    "Sempadan Daerah":DAERAH,
-    "Sempadan Mukum": MUKIM    
+    // "Sempadan Daerah":DAERAH,
+    // "Sempadan Mukum": MUKIM    
   }
 };
 
