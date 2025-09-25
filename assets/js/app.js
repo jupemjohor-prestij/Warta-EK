@@ -100,20 +100,20 @@ function syncSidebar() {
     }
   });
   /* Loop through hospital layer and add only features which are in the map bounds */
-  hospital.eachLayer(function (layer) {
-    if (map.hasLayer(hospitalLayer)) {
-      if (map.getBounds().contains(layer.getLatLng())) {
-        $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/hospital.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
-      }
-    }
-  });
-  /* Update list.js featureList */
-  featureList = new List("features", {
-    valueNames: ["feature-name"]
-  });
-  featureList.sort("feature-name", {
-    order: "asc"
-  });
+  // hospital.eachLayer(function (layer) {
+  //   if (map.hasLayer(hospitalLayer)) {
+  //     if (map.getBounds().contains(layer.getLatLng())) {
+  //       $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/hospital.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+  //     }
+  //   }
+  // });
+  // /* Update list.js featureList */
+  // featureList = new List("features", {
+  //   valueNames: ["feature-name"]
+  // });
+  // featureList.sort("feature-name", {
+  //   order: "asc"
+  // });
 }
 
 /* Basemap Layers */
@@ -204,47 +204,47 @@ $.getJSON("data/Data Balai Polis (KIK Jupem)/Balai Polis/GeoJson/Balai Polis JBS
 });
 
 // /* Empty layer placeholder to add to layer control for listening when to add/remove hospital to markerClusters layer */
-var hospitalLayer = L.geoJson(null);
-var hospital = L.geoJson(null, {
-  pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, {
-      icon: L.icon({
-        iconUrl: "assets/img/hospital.png",
-        iconSize: [24, 28],
-        iconAnchor: [12, 28],
-        popupAnchor: [0, -25]
-      }),
-      title: feature.properties.NAME,
-      riseOnHover: true
-    });
-  },
-  onEachFeature: function (feature, layer) {
-    if (feature.properties) {
-      // var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
-      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>"+"<tr><th>Go to location</th><td><a class='url-break' href='" + feature.properties.GoogleMap + "' target='_blank'>" + feature.properties.GoogleMap + "</a></td></tr>" + "<table>";
-      layer.on({
-        click: function (e) {
-          $("#feature-title").html(feature.properties.NAME);
-          $("#feature-info").html(content);
-          $("#featureModal").modal("show");
-          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
-        }
-      });
-      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/hospital.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
-      hospitalearch.push({
-        name: layer.feature.properties.NAME,
-        address: layer.feature.properties.ADRESS1,
-        source: "hospital",
-        id: L.stamp(layer),
-        lat: layer.feature.geometry.coordinates[1],
-        lng: layer.feature.geometry.coordinates[0]
-      });
-    }
-  }
-});
-$.getJSON("data/Point/OSM_hospital1.geojson", function (data) {
-  hospital.addData(data);
-});
+// var hospitalLayer = L.geoJson(null);
+// var hospital = L.geoJson(null, {
+//   pointToLayer: function (feature, latlng) {
+//     return L.marker(latlng, {
+//       icon: L.icon({
+//         iconUrl: "assets/img/hospital.png",
+//         iconSize: [24, 28],
+//         iconAnchor: [12, 28],
+//         popupAnchor: [0, -25]
+//       }),
+//       title: feature.properties.NAME,
+//       riseOnHover: true
+//     });
+//   },
+//   onEachFeature: function (feature, layer) {
+//     if (feature.properties) {
+//       // var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
+//       var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.NAME + "</td></tr>"+"<tr><th>Go to location</th><td><a class='url-break' href='" + feature.properties.GoogleMap + "' target='_blank'>" + feature.properties.GoogleMap + "</a></td></tr>" + "<table>";
+//       layer.on({
+//         click: function (e) {
+//           $("#feature-title").html(feature.properties.NAME);
+//           $("#feature-info").html(content);
+//           $("#featureModal").modal("show");
+//           highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
+//         }
+//       });
+//       $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/hospital.png"></td><td class="feature-name">' + layer.feature.properties.NAME + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+//       hospitalearch.push({
+//         name: layer.feature.properties.NAME,
+//         address: layer.feature.properties.ADRESS1,
+//         source: "hospital",
+//         id: L.stamp(layer),
+//         lat: layer.feature.geometry.coordinates[1],
+//         lng: layer.feature.geometry.coordinates[0]
+//       });
+//     }
+//   }
+// });
+// $.getJSON("data/Point/OSM_hospital1.geojson", function (data) {
+//   hospital.addData(data);
+// });
 
 
 ///LAYER BIL PENDUDUK 
@@ -488,10 +488,10 @@ map.on("overlayadd", function(e) {
     markerClusters.addLayer(polis);
     syncSidebar();
   }
-  if (e.layer === hospitalLayer) {
-    markerClusters.addLayer(hospital);
-    syncSidebar();
-  }
+  // if (e.layer === hospitalLayer) {
+  //   markerClusters.addLayer(hospital);
+  //   syncSidebar();
+  // }
 });
 
 map.on("overlayremove", function(e) {
@@ -499,10 +499,10 @@ map.on("overlayremove", function(e) {
     markerClusters.removeLayer(polis);
     syncSidebar();
   }
-  if (e.layer === hospitalLayer) {
-    markerClusters.removeLayer(hospital);
-    syncSidebar();
-  }
+  // if (e.layer === hospitalLayer) {
+  //   markerClusters.removeLayer(hospital);
+  //   syncSidebar();
+  // }
 });
 
 /* Filter sidebar feature list to only show features in current map bounds */
@@ -587,15 +587,15 @@ var baseLayers = {
 var groupedOverlays = {
   "Perkhidmatan Kecemasan": {
     "<img src='assets/img/polis.png' width='24' height='28'>&nbsp;Balai Polis": polisLayer,
-    "<img src='assets/img/hospital.png' width='24' height='28'>&nbsp;Hospital": hospitalLayer,
+    // "<img src='assets/img/hospital.png' width='24' height='28'>&nbsp;Hospital": hospitalLayer,
     
   },
   "Pelan Warta": {
     "Sempadan Polis": SempadanPolis,
-    // "Sempadan Polis Johor Bahru Selatan": SempadanPolisJBS,
+    "Sempadan Polis Johor Bahru Selatan": SempadanPolisJBS,
     "Bil. Penduduk": BilPenduduk,
-    // "Sempadan Daerah":DAERAH,
-    // "Sempadan Mukim": MUKIM    
+    "Sempadan Daerah":DAERAH,
+    "Sempadan Mukim": MUKIM    
   }
 };
 
