@@ -119,7 +119,8 @@ function syncSidebar() {
 /* Basemap Layers */
 var cartoLight = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
   maxZoom: 19,
-  attribution: '&copy; BryanMcBride , &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+  // attribution: '&copy; cccBryanMcBride , &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+  attribution: 'PENAFIAN : Setiap maklumat yang terkandung di dalam portal Warta EK ini adalah untuk tujuan maklumat umum sahaja dan tidak semestinya mengandungi maklumat yang tepat dan terkini. Maklumat tersebut mungkin dikemaskini, ditukar atau diubah dari semasa ke semasa dan pihak Warta EK tidak bertanggungjawab terhadap sebarang liabiliti berkenaan ketepatan maklumat yang dipaparkan. Pihak Warta EK berhak membuat sebarang perubahan tanpa sebarang notis. Pengguna hendaklah membuat pengesahan maklumat terlebih dahulu sebelum menggunakannya. Sesetengah maklumat mungkin berpunca daripada pihak ketiga dan pihak Warta EK tidak bertanggungjawab terhadap sebarang ketepatan atau perkara lain yang berkaitan dengan maklumat tersebut. Membuat laporan palsu adalah satu kesalahan di bawah Seksyen 182 Kanun Keseksaan dan boleh dikenakan hukuman penjara sehingga enam (6) bulan atau denda sehingga RM2,000 atau kedua-duanya sekali.</a>'
 });
 // var usgsImagery = L.layerGroup([L.tileLayer("http://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x11}", {
 //   maxZoom: 30,
